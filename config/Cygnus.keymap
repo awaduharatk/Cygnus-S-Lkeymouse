@@ -149,6 +149,16 @@
             quick-tap-ms = <0>;
         };
 
+        clt: clt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "CLIPBOARD_LAYER_TAP";
+            bindings = <&mo>, <&kp>;
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
+        };
+
         rotate: rotate {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ROTATE";
@@ -164,7 +174,7 @@
 
         default_layer {
             bindings = <
-&mt LWIN Q        &kp W     &kp E         &kp R  &kp T                                                            &kp Y            &kp U  &lt 5 I    &kp O    &kp P
+&clt 8 Q          &kp W     &kp E         &kp R  &kp T                                                            &kp Y            &kp U  &lt 5 I    &kp O    &kp P
 &mt LCTRL A       &kp S     &kp D         &kp F  &kp G                   &kp LS(LG(S))            &kp SEMICOLON   &kp H            &kp J  &kp K      &kp L    &mlt 4 SQT
 &mt LEFT_SHIFT Z  &kp X     &kp C         &kp V  &kp B                   &mt LEFT_ALT ESCAPE      &mt LSHIFT TAB  &kp N            &kp M  &kp COMMA  &kp DOT  &lt 7 SLASH
 &mt LCTRL ESCAPE  &kp LWIN  &kp LEFT_ALT  &mo 1  &mt LEFT_CONTROL SPACE  &kp LEFT_SHIFT           &lt 1 ENTER     &lt 3 LS(SPACE)                             &lt 6 BACKSLASH
@@ -181,7 +191,7 @@
 &trans                &trans  &trans  &trans  &trans      &trans            &trans     &trans                                                       &kp PIPE
             >;
 
-            sensor-bindings = <&rotate>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
         };
 
         FUNCTION {
@@ -201,7 +211,7 @@
 &code           &trans              &trans          &trans               &trans       &trans             &trans     &trans                                                  &kp LA(F4)
             >;
 
-            sensor-bindings = <&rotate>;
+            sensor-bindings = <&inc_dec_kp LC(TAB) LC(LS(TAB))>;
         };
 
         MOUSE {
@@ -237,6 +247,15 @@
 &none  &none  &none  &none  &none  &none      &none  &none  &none           &kp UP_ARROW    &none            &none
 &none  &none  &none  &none  &none  &none      &none  &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none
 &none  &none  &none  &none  &none  &none      &none  &none                                                   &none
+            >;
+        };
+
+        CLIPBOARD {
+            bindings = <
+&trans  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LG(V)                            &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans     &trans     &trans     &trans         &trans     &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans     &trans     &trans     &trans         &trans     &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans     &trans     &trans     &trans         &trans     &trans                          &trans
             >;
         };
     };
