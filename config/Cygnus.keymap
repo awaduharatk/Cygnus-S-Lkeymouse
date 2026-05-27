@@ -254,10 +254,10 @@
 
         CLIPBOARD {
             bindings = <
-&trans  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LG(V)                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans     &trans     &trans     &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans     &trans     &trans     &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans     &trans     &trans     &trans      &trans  &trans                          &trans
+&trans  &kp LC(X)  &kp LC(C)      &kp LC(V)  &kp LG(V)                          &trans  &trans  &trans  &trans  &kp LC(P)
+&trans  &kp LC(A)  &kp LS(LC(F))  &kp LC(F)  &kp LS(LC(F))  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans         &trans     &trans         &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans         &trans     &trans         &trans      &trans  &trans                          &trans
             >;
         };
     };
