@@ -143,6 +143,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "MOUSE_LAYER_TAP";
             bindings = <&mo>, <&kp>;
+
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
@@ -153,6 +154,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "CLIPBOARD_LAYER_TAP";
             bindings = <&mo>, <&kp>;
+
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <150>;
@@ -243,7 +245,7 @@
 
         right {
             bindings = <
-&none  &none  &none  &none  &none                    &none  &none           &none           &none            &none
+&none  &none  &none  &none  &none                    &none  &none           &none           &none            &kp C_PLAY_PAUSE
 &none  &none  &none  &none  &none  &none      &none  &none  &none           &kp UP_ARROW    &none            &none
 &none  &none  &none  &none  &none  &none      &none  &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none
 &none  &none  &none  &none  &none  &none      &none  &none                                                   &none
@@ -252,10 +254,10 @@
 
         CLIPBOARD {
             bindings = <
-&trans  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LG(V)                            &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans     &trans     &trans     &trans         &trans     &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans     &trans     &trans     &trans         &trans     &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans     &trans     &trans     &trans         &trans     &trans                          &trans
+&trans  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LG(V)                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans     &trans     &trans     &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans     &trans     &trans     &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans     &trans     &trans     &trans      &trans  &trans                          &trans
             >;
         };
     };
