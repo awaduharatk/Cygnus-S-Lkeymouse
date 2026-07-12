@@ -161,6 +161,18 @@
             quick-tap-ms = <0>;
         };
 
+        slt: slt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SCROLL_LAYER_TAP";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <0>;
+            require-prior-idle-ms = <150>;
+        };
+
         rotate: rotate {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ROTATE";
@@ -176,7 +188,7 @@
 
         default_layer {
             bindings = <
-&clt 8 Q          &kp W     &kp E         &kp R  &kp T                                                            &kp Y            &kp U  &lt 5 I    &kp O    &kp P
+&clt 8 Q          &kp W     &kp E         &kp R  &kp T                                                            &kp Y            &kp U  &slt 5 I   &kp O    &kp P
 &mt LCTRL A       &kp S     &kp D         &kp F  &kp G                   &kp LS(LG(S))            &kp SEMICOLON   &kp H            &kp J  &kp K      &kp L    &mlt 4 SQT
 &mt LEFT_SHIFT Z  &kp X     &kp C         &kp V  &kp B                   &mt LEFT_ALT ESCAPE      &mt LSHIFT TAB  &kp N            &kp M  &kp COMMA  &kp DOT  &lt 7 SLASH
 &mt LCTRL ESCAPE  &kp LWIN  &kp LEFT_ALT  &mo 1  &mt LEFT_CONTROL SPACE  &kp LEFT_SHIFT           &lt 1 ENTER     &lt 3 LS(SPACE)                             &lt 6 BACKSLASH
